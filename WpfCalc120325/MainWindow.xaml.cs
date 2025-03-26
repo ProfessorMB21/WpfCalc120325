@@ -95,11 +95,11 @@ namespace WpfCalc120325
         }
 
         private enum Theme { Denis, Marina };
-        private Theme T = Theme.Denis;
+        private Theme _t = Theme.Denis;
         private void Theme_Click(object sender, RoutedEventArgs e)
         {
-            T = (Theme)(((int)T + 1) % 2);
-            var dict = new ResourceDictionary { Source= new Uri(T+".xaml", UriKind.Relative) };
+            _t = (Theme)(((int)_t + 1) % 2);
+            var dict = new ResourceDictionary { Source= new Uri(_t+".xaml", UriKind.Relative) };
             Resources.MergedDictionaries.Clear();
             Resources.MergedDictionaries.Add(dict);
         }
